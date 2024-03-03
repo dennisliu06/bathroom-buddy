@@ -8,7 +8,7 @@ const Explore = (props) => {
     return (
       <>
         <NavBar />
-
+        
       </>
     );
   };

@@ -9,11 +9,17 @@ const NavBar = (props) => {
     <>
       <div className="NavBar-container">
         <div className="NavBar-title u-inlineBlock u-bold">Bathroom Buddy</div>
-        <div className="NavBar-linkContainer u-lineBlock">
-            <Link to="/" className="u-link">
-                Home
-            </Link>
-            Hello
+        <div className="u-inlineBlock">
+          <img src="/maleLogo.png" className="NavBar-logo" width="9.2px" alt="logo"></img>
+          <img src="/femaleLogo.png" className="NavBar-logo" width="15px" alt="logo"></img>
+        </div>
+        <div className="NavBar-linkContainer u-inlineBlock">
+          <Link to="/" className="NavBar-link">
+            Home
+          </Link>
+          <Link to="/review" className="NavBar-link">
+            Write a Review
+          </Link>
         </div>
       </div>
     </>
