@@ -5,9 +5,9 @@ import "./Explore.css"
 
 const Explore = ({ userId, handleLogin, handleLogout }) => {
     return (
-      <>
+        <>
         
-      </>
+        </>
     );
   };
   

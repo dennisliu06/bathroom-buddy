@@ -9,38 +9,22 @@ const GOOGLE_CLIENT_ID = "402607011221-q6aaeqns6r1fk63b39cuv8ceb7n4jnsm.apps.goo
 
 const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
-    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-      {userId ? (
-        <button
-          onClick={() => {
-            googleLogout();
-            handleLogout();
-          }}
-        >
-          Logout
-        </button>
-      ) : (
-        <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
-      )}
-      <h1>Good luck on your project :)</h1>
-      <h2> What you need to change in this skeleton</h2>
-      <ul>
-        <li>
-          Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at
-          http://weblab.is/clientid)
-        </li>
-        <li>Change the Server CLIENT_ID to the same CLIENT_ID (auth.js)</li>
-        <li>
-          Change the Database SRV (mongoConnectionURL) for Atlas (server.js). You got this in the
-          MongoDB setup.
-        </li>
-        <li>Change the Database Name for MongoDB to whatever you put in the SRV (server.js)</li>
-      </ul>
-      <h2>How to go from this skeleton to our actual app</h2>
-      <a href="https://docs.google.com/document/d/110JdHAn3Wnp3_AyQLkqH2W8h5oby7OVsYIeHYSiUzRs/edit?usp=sharing">
-        Check out this getting started guide
-      </a>
-    </GoogleOAuthProvider>
+    <>
+    
+        
+            
+            <body>
+                <h1>Bathroom Buddy</h1>
+                <p>address, city, neighborhood, zipcode</p>
+                <h2>Write a review</h2>
+                <div>
+                    <h3>About us</h3>
+                    <h4>We understand the struggle of finding a clean, accessible, and private bathroom when you are out and about. Our mission is simple: to make your bathroom-hunting experience easy, convenient, and stress-free. Now with Bathroom Buddy, you can locate nearby bathrooms with a few clicks. No matter where you are, B.B. has got your back. We've curated a database of bathrooms based on accessibility, cleanliness, and privacy, ensuring you find the perfect spot wherever you are. Next time nature calls, let Bathroom Buddy guide you. We're here to make your bathroom breaks a breeze!</h4>
+                    <h5>Learn more</h5>
+                </div>
+            </body>
+        
+      </>
   );
 };
 
