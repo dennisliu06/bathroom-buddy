@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+
 
 import "../../utilities.css";
 import "./Explore.css"
@@ -58,7 +58,8 @@ const center = {
     ) : <></>
   }; */
 
-  const Explore = () => {
+  const Explore = (props) => {
+
     return (
       <>
         <NavBar/>
