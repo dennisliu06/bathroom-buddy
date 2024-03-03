@@ -6,6 +6,7 @@ import jwt_decode from "jwt-decode";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Explore from "./pages/Explore.js";
+import Review from "./pages/Review.js"
 
 import "../utilities.css";
 
@@ -67,8 +68,20 @@ const App = () => {
           />
         }
       />
+      <Route
+        path="/review"
+        element={
+          <Review
+            path="/review"
+            handleLogin={handleLogin}
+            handleLogout={handleLogout}
+            userId={userId}
+          />
+        }
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
+    
   );
 };
 

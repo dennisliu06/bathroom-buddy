@@ -14,17 +14,24 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
         
             
             <body>
+
+          
               <p className="bathroom"></p>
               <div>
-                <img src="public.jpeg" id="bathroom-image" height="500" width="1000"></img>
-              </div>
-                <h1>Bathroom Buddy</h1>
-                <div>
+                <img src="bathroom.jpeg" id="bathroom-image" height="500" width="1000"></img>
+                <div className="text-overlay">
                 <form action="/explore" method="GET">
                   <label htmlFor="name">Enter your city, address, neighborhood, zip code</label>
-                    <input type="text" id="name" name="name"/>
-                    <input type="submit" value="Submit"/>
+                  <input type="text" id="name" name="name"/>
+                  <input type="submit" value="Submit"/>
                 </form>
+              </div>
+              </div>
+
+              
+                <h1>Bathroom Buddy</h1>
+                <div>
+                
                 
               
                 
