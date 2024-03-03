@@ -21,9 +21,8 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
                 <img src="bathroom.jpeg" id="bathroom-image" height="700" width="2000"></img>
                 <div className="text-overlay">
                 <form action="/explore" method="GET">
-                  <label htmlFor="name">Enter your city, address, neighborhood, zip code</label>
-                  <input type="text" id="name" name="name"/>
-                  <input type="submit" value="Submit"/>
+                <input type="text" id="name" name="name" placeholder="Enter your city, address, neighborhood, zip code" />
+                <input type="submit" value="Search" /> 
                 </form>
               </div>
               </div>
