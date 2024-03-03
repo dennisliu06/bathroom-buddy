@@ -14,13 +14,36 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
         
             
             <body>
+              <p className="bathroom"></p>
+              <div>
+                <img src="public.jpeg" id="bathroom-image" height="500" width="1000"></img>
+              </div>
                 <h1>Bathroom Buddy</h1>
-                <p>address, city, neighborhood, zipcode</p>
-                <h2>Write a review</h2>
                 <div>
-                    <h3>About us</h3>
-                    <h4>We understand the struggle of finding a clean, accessible, and private bathroom when you are out and about. Our mission is simple: to make your bathroom-hunting experience easy, convenient, and stress-free. Now with Bathroom Buddy, you can locate nearby bathrooms with a few clicks. No matter where you are, B.B. has got your back. We've curated a database of bathrooms based on accessibility, cleanliness, and privacy, ensuring you find the perfect spot wherever you are. Next time nature calls, let Bathroom Buddy guide you. We're here to make your bathroom breaks a breeze!</h4>
-                    <h5>Learn more</h5>
+                <form action="/explore" method="GET">
+                  <label htmlFor="name">Enter your city, address, neighborhood, zip code</label>
+                    <input type="text" id="name" name="name"/>
+                    <input type="submit" value="Submit"/>
+                </form>
+                
+              
+                
+                </div>
+                <div>
+                  <div className="button-container">
+                    <div id="review" onclick="writeReview()">Write a review</div>
+                    <h3>We understand the struggle of finding a clean, accessible, and private bathroom when you are out and about. Our mission is simple: to make your bathroom-hunting experience easy, convenient, and stress-free. Now with Bathroom Buddy, you can locate nearby bathrooms with a few clicks. No matter where you are, B.B. has got your back. We've curated a database of bathrooms based on accessibility, cleanliness, and privacy, ensuring you find the perfect spot wherever you are. Next time nature calls, let Bathroom Buddy guide you. We're here to make your bathroom breaks a breeze!</h3>
+
+                    <div id="learn" onclick="learnMore()">Learn More</div>
+
+
+
+                  </div>
+                  
+
+                <button>
+            
+                </button>
                 </div>
             </body>
         
