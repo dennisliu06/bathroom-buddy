@@ -71,6 +71,7 @@
 }
 .btn-group .btn.submit:hover {
 	background: var(#C8D9E5);
+	animation: submit 0.5s;
 }
 .btn-group .btn.cancel {
 	background: var(--white);
@@ -78,6 +79,7 @@
 }
 .btn-group .btn.cancel:hover {
 	background: var(--light);
+	animation: submit 0.5s;
 }
 .checkbox {
     display: flex;
