@@ -1,8 +1,12 @@
 import React from "react";
 import "../../utilities.css";
 import "./Review.css";
+import NavBar from "../modules/NavBar"
+
 const Review = (props) => {
     return (
+        <>
+        <NavBar />
         <div className="Review-container">
             <div className="wrapper">
                 <h3>Write your review below</h3>
@@ -29,6 +33,7 @@ const Review = (props) => {
                 </div>
             </div>
             </div>
+        </>
     );
 };
 

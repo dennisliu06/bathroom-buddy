@@ -23,8 +23,8 @@ export default function SimpleMap(props){
                 defaultZoom={defaultProps.zoom}
             >
                 <AnyReactComponent
-                lat={59.955413}
-                lng={30.337844}
+                lat={42.36042881656016}
+                lng={-71.0873451394108}
                 text="My Marker"
                 />
             </GoogleMapReact>

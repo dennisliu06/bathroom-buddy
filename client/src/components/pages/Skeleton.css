@@ -1,6 +1,6 @@
 /* Fill me in :) */
 
-h1 {
+.Name {
     color:rgb(52, 54, 55);
     font-family:Georgia, 'Times New Roman', Times, serif;
     position:absolute;
@@ -27,12 +27,13 @@ input[type="submit"] {
     font-size: 16px; /* Set font size */
     border-radius: 9px; /* Add border radius */
     cursor: pointer; /* Add pointer cursor */
+    
 }
 
 /* Make the text input box bigger and rounder */
 input[type="text"] {
-    width: 500px; /* Set width */
-    height:40px;
+    width: 700px; /* Set width */
+    height:70px;
     padding: 10px; /* Add padding */
     border: 1px solid #ccc; /* Add border */
     border-radius: 20px; /* Add border radius */
@@ -49,7 +50,7 @@ input[type="text"] {
     left:50%;
     padding: 40px;
     text-align: center;
-    background-color:#E9E8E8;
+    /*background-color:#E9E8E8;*/
     transform: translate(-50%, -50%);
     border-radius:300px;
     border-color:black;
@@ -79,7 +80,7 @@ input[type="text"] {
 
 
 
-h2 {
+.About {
 
     text-align:center;
     padding:30px;
@@ -88,7 +89,7 @@ h2 {
     color:rgb(52, 46, 75)
 }
 
-h3 {
+.Paragraph {
     text-align: center;
     font-size:20px;
     font-family:'Times New Roman', Times, serif;
@@ -105,11 +106,15 @@ h3 {
 
 }
 
+.Submit-container{
+    position: relative;
+}
 
-
-
-body {
-    background-color:#E9E8E8;
+.Review-container {
     text-align:center;
 
+}
+
+#bathroom-image {
+    filter: brightness(50%)
 }
