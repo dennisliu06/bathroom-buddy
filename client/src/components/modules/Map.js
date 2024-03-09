@@ -1,7 +1,6 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import Marker from "./Marker"
 
 export default function SimpleMap(props){
     const location = props.location;
@@ -17,10 +16,10 @@ export default function SimpleMap(props){
                 defaultZoom={17}
                 
             >
-                <AnyReactComponent
+                <Marker
                 lat={42.3504997}
                 lng={-71.1053991}
-                text="My Marker"
+                text="Bathroom"
                 />
             </GoogleMapReact>
             </div>
