@@ -43,6 +43,7 @@
 
 
 .Review-input {
+	
 	float:inline;
 	width: 92%;
 	background: var(--light);
@@ -53,12 +54,17 @@
 	resize: none;
 	margin-bottom: 1rem;
 }
-.btn-group {
+.bathroomType {
+    display: flex; 
+    justify-content: center;
+    gap: 0.5em; 
+	margin-bottom: 1rem;
 	
+}
+.bathroomType button, .btn-group {
 	display: flex;
 	justify-content: center;
 	gap: .5em; 
-	align-items: center;
 }
 .btn-group .btn {
 	padding: .5rem 1rem;
@@ -70,6 +76,10 @@
 	font-weight: 500;
 	
 }
+.bathroomType .male:hover,
+.bathroomType .female:hover,
+.bathroomType .allgender:hover,
+.bathroomType .family:hover,
 .btn-group .btn.submit {
 	background: var(--blue);
 	color: var(--white);
@@ -106,4 +116,30 @@
 
 .wrapper {
     background-color: #B5CFE1; 
+}
+
+.bathroomType button,
+.btn-group .btn {
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+.bathroomType .male,
+.bathroomType .female,
+.bathroomType .allgender,
+.bathroomType .family,
+.btn-group .btn.cancel {
+    background: var(--white);
+    color: var(--blue);
+	
+}
+
+.bathroomType button:hover,
+.btn-group .btn.cancel:hover {
+    background: var(--light);
 }

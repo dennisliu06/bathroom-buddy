@@ -4,6 +4,7 @@ import "./Review.css";
 import NavBar from "../modules/NavBar"
 import Stars from "../modules/Stars"
 import Address from "../modules/Address"
+import BathroomButtons from "../modules/BathroomButtons";
 
 const Review = (props) => {
     return (
@@ -15,6 +16,7 @@ const Review = (props) => {
                 <h1></h1>
                 <Address />
                 <h1></h1>
+                <BathroomButtons />
                 <div className="textInputs">
                     <div className="overall">Rate Your Overall Experience
                         <Stars />

@@ -38,7 +38,7 @@ const Address = (props) => {
                     value={address}
                     onChange={handleAddressChange}
                 />
-                <button onClick={handleAddressLookup}>Lookup</button>
+                <button onClick={handleAddressLookup}>Use Your Location</button>
             </div>
         </div>
     );
