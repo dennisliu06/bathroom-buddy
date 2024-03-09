@@ -8,7 +8,7 @@ import "../../utilities.css";
 import "./Home.css";
 import Explore from "../pages/Explore";
 
-//TODO: REPLACE WITH YOUR OWN CLIENT_ID
+
 const GOOGLE_CLIENT_ID = "402607011221-q6aaeqns6r1fk63b39cuv8ceb7n4jnsm.apps.googleusercontent.com";
 
 
@@ -49,7 +49,10 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
                 value={address} // Bind input value to searchText state
                 onChange={handleInputChange} // Call handleInputChange when input changes
               />
-              <Link to={`/explore/${address}`}>Explore</Link>
+              <div>
+                
+              </div>
+              <Link to={`/explore/${address}`} className="review-btn">Explore</Link>
             </form>
           </div>
         </div>
