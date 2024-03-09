@@ -61,7 +61,7 @@ const Address = (props) => {
                             const address = results[0].formatted_address;
                             setAddress(address);
                         } else {
-                            console.error("No address found for given coordinates.");
+                            console.error("No address");
                         }
                     } else {
                         console.error("Geocoder failed due to: ", status);
@@ -86,8 +86,8 @@ const Address = (props) => {
     };
 
     const handlePredictionSelect = (prediction) => {
-        setAddress(""); // Clear the address when a prediction is selected
-        setPredictions([]); // Clear the predictions
+        setAddress(""); 
+        setPredictions([]); 
     };
 
     return (

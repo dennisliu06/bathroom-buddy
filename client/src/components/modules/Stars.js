@@ -2,20 +2,21 @@ import React from "react";
 import "./Stars.css";
 
 const Stars = (props) => {
+    const { groupName } = props;
     return (
         <div className="rate">
-            <input type="radio" id="star5" name="rate" value="5"></input>
-            <label for="star5" title="text"></label>
-            <input type="radio" id="star4" name="rate" value="4"></input>
-            <label for="star4" title="text"></label>
-            <input type="radio" id="star3" name="rate" value="3"></input>
-            <label for="star3" title="text"></label>
-            <input type="radio" id="star2" name="rate" value="2"></input>
-            <label for="star2" title="text"></label>
-            <input type="radio" id="star1" name="rate" value="1"></input>
-            <label for="star1" title="text"></label>
+            <input type="radio" id={`${groupName}-star5`} name={groupName} value="5"></input>
+            <label htmlFor={`${groupName}-star5`} title="text"></label>
+            <input type="radio" id={`${groupName}-star4`} name={groupName} value="4"></input>
+            <label htmlFor={`${groupName}-star4`} title="text"></label>
+            <input type="radio" id={`${groupName}-star3`} name={groupName} value="3"></input>
+            <label htmlFor={`${groupName}-star3`} title="text"></label>
+            <input type="radio" id={`${groupName}-star2`} name={groupName} value="2"></input>
+            <label htmlFor={`${groupName}-star2`} title="text"></label>
+            <input type="radio" id={`${groupName}-star1`} name={groupName} value="1"></input>
+            <label htmlFor={`${groupName}-star1`} title="text"></label>
         </div>
-    )
-}
+    );
+};
 
 export default Stars;
