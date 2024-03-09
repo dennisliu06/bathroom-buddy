@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 
 import "../../utilities.css";
@@ -16,55 +17,41 @@ const center = {
   lng: -38.523
 };
 
-/*const Explore = (props) => {
-    const { isLoaded } = useJsApiLoader({
-      id: 'Maps-API-Key',
-      googleMapsApiKey: "AIzaSyCJPdR_z8r1nFaV9BgQX18PV8BZDqib0ho"
-    })
-    
-  
-    const [map, setMap] = React.useState(null)
-  
-    const onLoad = React.useCallback(function callback(map) {
-      // This is just an example of getting and using the map instance!!! don't just blindly copy!
-      const bounds = new window.google.maps.LatLngBounds(center);
-      map.fitBounds(bounds);
-        
-      setMap(map)
-    }, [])
-
-    useEffect(() => {
-      
-    }, [])
-  
-    const onUnmount = React.useCallback(function callback(map) {
-      setMap(null)
-    }, [])
-  
-    return isLoaded ? (
-      <>
-        <NavBar />
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={10}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
-        >
-          {}
-          <></>
-        </GoogleMap>
-      </>
-    ) : <></>
-  }; */
 
   const Explore = (props) => {
+    const { address } = useParams();
+    const [location, setLocation] = useState({
+      lat: 42.36042881656016,
+      lng: -71.0873451394108
+    });
+
+    useEffect(() => {
+      // Make a request to the Geocoding API
+      fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyCJPdR_z8r1nFaV9BgQX18PV8BZDqib0ho`)
+          .then(response => response.json())
+          .then(data => {
+              // Process the API response
+              const { results } = data;
+              if (results.length > 0) {
+                  const { geometry } = results[0];
+                  const { location } = geometry;
+                  console.log("Latitude:", location.lat);
+                  console.log("Longitude:", location.lng);
+                  // You can now use the latitude and longitude to display the location on a map
+                  setLocation(location);
+              }
+          })
+          .catch(error => {
+              console.error("Error fetching geocoding data:", error);
+          });
+  }, []);
 
     return (
       <>
         <NavBar/>
         <div className="Map-container">
-          <Map />
+          <Map location={location}/>
+          <h1>Address: {address}</h1>
         </div>
         
       </>

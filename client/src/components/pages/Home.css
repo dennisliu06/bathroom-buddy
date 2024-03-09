@@ -15,7 +15,7 @@
     border-color:black;
 }
 
-input[type="submit"] {
+#submit {
     background-color: #393957; /* Green background color */
     border: none; /* Remove border */
     color: white; /* White text color */

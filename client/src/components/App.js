@@ -58,10 +58,10 @@ const App = () => {
         }
       />
       <Route
-        path="/Explore"
+        path="/Explore/:address"
         element={
           <Explore
-            path="/Explore"
+            
             handleLogin={handleLogin}
             handleLogout={handleLogout}
             userId={userId}
