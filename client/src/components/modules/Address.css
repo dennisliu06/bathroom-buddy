@@ -27,7 +27,7 @@
     cursor: pointer;
     font-size: .875rem;
     font-weight: 500;
-    margin-top: 5px;
+    margin-top: 10px;
   }
   .addressInput button:hover{
     background: var(--blue);

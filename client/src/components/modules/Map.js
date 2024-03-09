@@ -8,7 +8,6 @@ export default function SimpleMap(props){
   
 
   return (
-    // Important! Always set the container height explicitly
     <>
         <div className="Map-container">
             <div style={{height: '95vh', width: '50%'}}>
