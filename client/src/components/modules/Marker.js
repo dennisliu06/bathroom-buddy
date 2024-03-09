@@ -6,7 +6,7 @@ import "./Marker.css"
 const Marker = ({ text }) => {
     return(
         <>
-        <div><img src={markerImage} width="20px"/>{text}</div>
+        <div><img src={markerImage} width="20px"className="marker"/>{text}</div>
         </>
     )
 }
