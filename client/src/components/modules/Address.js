@@ -48,7 +48,30 @@ const Address = (props) => {
     };
 
     const handleAddressLookup = () => {
-        // Perform address lookup here
+        // Get current geolocation coordinates
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                // Use geolocation coordinates to reverse geocode and get address
+                const geocoder = new window.google.maps.Geocoder();
+                const latLng = new window.google.maps.LatLng(latitude, longitude);
+                geocoder.geocode({ location: latLng }, (results, status) => {
+                    if (status === "OK") {
+                        if (results[0]) {
+                            const address = results[0].formatted_address;
+                            setAddress(address);
+                        } else {
+                            console.error("No address found for given coordinates.");
+                        }
+                    } else {
+                        console.error("Geocoder failed due to: ", status);
+                    }
+                });
+            },
+            (error) => {
+                console.error("Error getting geolocation coordinates: ", error);
+            }
+        );
     };
 
     const handleInputFocus = () => {
@@ -63,8 +86,8 @@ const Address = (props) => {
     };
 
     const handlePredictionSelect = (prediction) => {
-        setAddress(prediction.description);
-        setPredictions([]);
+        setAddress(""); // Clear the address when a prediction is selected
+        setPredictions([]); // Clear the predictions
     };
 
     return (
