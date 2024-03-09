@@ -11,9 +11,17 @@ const GOOGLE_CLIENT_ID = "402607011221-q6aaeqns6r1fk63b39cuv8ceb7n4jnsm.apps.goo
 const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <>
-      <div className="Review-container">
+      <div className="Review-wrapper">
         <div className ="Submit-container">
           <img src="bathroom.jpeg" id="bathroom-image" height="700" width="2000"></img>
+          <h1 className="Name">Bathroom Buddy</h1>
+        <div>
+          <div className="button-container">
+            <Link to="/review" id="review">
+              Write a Review
+            </Link>
+          </div>
+        </div>
           <div className="text-overlay">
             <form action="/explore" method="GET">
               <input
@@ -27,14 +35,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
           </div>
         </div>
 
-        <h1 className="Name">Bathroom Buddy</h1>
-        <div>
-          <div className="button-container">
-            <Link to="/review" id="review">
-              Write a Review
-            </Link>
-          </div>
-        </div>
+
       </div>
       <h2 className="About">About us</h2>
             <h3 className="Paragraph">

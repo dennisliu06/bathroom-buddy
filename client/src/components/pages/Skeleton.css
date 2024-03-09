@@ -1,7 +1,7 @@
 /* Fill me in :) */
 
 .Name {
-    color:rgb(52, 54, 55);
+    color:rgb(255, 255, 255);
     font-family:Georgia, 'Times New Roman', Times, serif;
     position:absolute;
     top:5%;
@@ -10,7 +10,6 @@
     padding: 20px;
     text-align: right;
     font-size: 30px;
-    background-color:#E9E8E8;
     transform: translate(-50%, -50%);
     border-radius:300px;
     border-color:black;
@@ -58,25 +57,25 @@ input[type="text"] {
 }
 
 #review {
-    color:rgb(95, 94, 96);
-    font-family:'Times New Roman', Times, serif;
+    color:rgb(255, 255, 255);
     position:absolute;
     top:7.1%;
     left:83%;
     padding: 20px;
     text-align: right;
     font-size: 25px;
-    background-color:#E9E8E8;
     transform: translate(-50%, -50%);
     border-radius:300px;
     border-color:black;
     margin:0;
     font-style: bold;
-
-    
-
+    text-decoration: none;
+    padding: 10px;
 }
 
+#review:hover{
+    opacity: 0.8;
+}
 
 
 
@@ -110,7 +109,7 @@ input[type="text"] {
     position: relative;
 }
 
-.Review-container {
+.Review-wrapper {
     text-align:center;
 
 }
