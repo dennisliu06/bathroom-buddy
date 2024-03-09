@@ -22,10 +22,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
               </Link>
             </div>
           </div>
-          <div
-            className="text-ove
-          rlay"
-          >
+          <div className="text-overlay">
             <form action="/explore" method="GET">
               <input
                 type="text"
