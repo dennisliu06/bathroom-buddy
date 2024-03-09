@@ -1,0 +1,15 @@
+.bathroomType {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bathroomType .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bathroomType .checkboxes {
+    margin-top: 10px; 
+}
