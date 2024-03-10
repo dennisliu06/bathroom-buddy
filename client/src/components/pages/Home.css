@@ -77,9 +77,10 @@ input[type="text"] {
     opacity: 0.8;
 }
 
-.review-btn {
-    background: var(--white);
-    color: var(--blue);
+#explore{
+    text-decoration:rgb(52, 46, 75);
+    background: var(--blue);
+    color: var(--white);
     padding: .5rem 1rem;
     border-radius: .5rem;
     border: none;
@@ -87,11 +88,11 @@ input[type="text"] {
     cursor: pointer;
     font-size: 1.5rem;
     font-weight: 500;
-    margin-top: 50px;
-    position: absolute;
-    bottom: -10%; /* Adjust the value as needed */
-    left: 50%;
-    transform: translateX(-50%);
+    display:inline-block;
+    margin-top: 10px;
+}
+#explore:hover{
+    opacity: 0.8;
 }
 
 .About {

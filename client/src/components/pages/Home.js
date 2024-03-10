@@ -50,11 +50,12 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
                 onChange={handleInputChange} // Call handleInputChange when input changes
               />
               <div>
-                
+              <Link to={`/explore/${address}`} id="explore">Explore</Link>
               </div>
-              <Link to={`/explore/${address}`} className="review-btn">Explore</Link>
+              
             </form>
           </div>
+          
         </div>
       </div>
       <h2 className="About">About us</h2>
