@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Address.css";
 import "../../utilities.css";
+import { post } from "../../utilities"
 
 const Address = (props) => {
     const [address, setAddress] = useState("");
@@ -10,6 +11,8 @@ const Address = (props) => {
     const handleAddressChange = (event) => {
         setAddress(event.target.value);
     };
+
+    
 
     useEffect(() => {
         const loadGoogleMapsScript = () => {
@@ -46,6 +49,16 @@ const Address = (props) => {
             console.error("Autocomplete instance is not available.");
         }
     };
+
+    const addLocation = (lat, long) => {
+        const body = {
+          lat : lat,
+          lng : long
+        };
+        post("/api/location", body).then(() => {
+          console.log("added");
+        })
+      }
 
     const handleAddressLookup = () => {
         // Get current geolocation coordinates

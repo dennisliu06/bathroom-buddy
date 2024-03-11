@@ -2,6 +2,7 @@ import React from "react";
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker"
 
+
 export default function SimpleMap(props){
     const location = props.location;
   
@@ -18,9 +19,10 @@ export default function SimpleMap(props){
                 
             >
                 <Marker
-                lat={42.3504997}
-                lng={-71.1053991}
-                text="Bathroom"
+                lat={location.lat}
+                lng={location.lng}
+                text="Location"
+                
                 />
             </GoogleMapReact>
             </div>

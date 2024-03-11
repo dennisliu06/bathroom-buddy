@@ -40,8 +40,7 @@ const center = {
                   // You can now use the latitude and longitude to display the location on a map
                   setLocation(location);
               }
-          })
-          .catch(error => {
+          }).catch(error => {
               console.error("Error fetching geocoding data:", error);
           });
   }, []);
