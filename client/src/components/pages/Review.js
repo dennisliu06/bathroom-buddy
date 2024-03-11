@@ -1,6 +1,7 @@
 import React from "react";
 import "../../utilities.css";
 import "./Review.css";
+
 import NavBar from "../modules/NavBar"
 import Stars from "../modules/Stars"
 import Address from "../modules/Address"
@@ -8,7 +9,7 @@ import BathroomButtons from "../modules/BathroomButtons";
 
 const Review = (props) => {
     const handleSubmit = () => {
-        
+        window.location.reload(); 
     }
     const handleCancel = () => {
         window.location.reload(); 

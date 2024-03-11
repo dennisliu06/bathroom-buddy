@@ -61,11 +61,9 @@ const Address = (props) => {
       }
 
     const handleAddressLookup = () => {
-        // Get current geolocation coordinates
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
-                // Use geolocation coordinates to reverse geocode and get address
                 const geocoder = new window.google.maps.Geocoder();
                 const latLng = new window.google.maps.LatLng(latitude, longitude);
                 geocoder.geocode({ location: latLng }, (results, status) => {
