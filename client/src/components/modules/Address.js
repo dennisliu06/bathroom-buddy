@@ -3,7 +3,7 @@ import "./Address.css";
 import "../../utilities.css";
 import { post } from "../../utilities"
 
-const Address = ({onAddressChange}) => {
+const Address = ({onAddressChange, home}) => {
     const [address, setAddress] = useState("");
     const [predictions, setPredictions] = useState([]);
     const autocompleteRef = useRef(null);
@@ -52,7 +52,9 @@ const Address = ({onAddressChange}) => {
     };
 
     useEffect(() => {
-        onAddressChange(address)
+        if(home){
+            onAddressChange(address)
+        }
     }, [address])
 
     const addLocation = (lat, long) => {

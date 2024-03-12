@@ -39,11 +39,10 @@ const Skeleton = ({ userId, handleLogin, handleLogout, history }) => {
           </div>
           <div className="text-overlay">
             <form onSubmit={handleSubmit}> {/* Call handleSubmit when form is submitted */}
-              <Address onAddressChange={handleAddressChange}/>
+              <Address onAddressChange={handleAddressChange} home={true}/>
               <div>
               <Link to={`/explore/${address}`} id="explore" onClick={handleAddressChange}>Search</Link>
               </div>
-              
             </form>
           </div>
           
