@@ -3,7 +3,7 @@ import "./Address.css";
 import "../../utilities.css";
 import { post } from "../../utilities"
 
-const Address = (props) => {
+const Address = ({onAddressChange}) => {
     const [address, setAddress] = useState("");
     const [predictions, setPredictions] = useState([]);
     const autocompleteRef = useRef(null);
@@ -48,7 +48,12 @@ const Address = (props) => {
         } else {
             console.error("Autocomplete instance is not available.");
         }
+        
     };
+
+    useEffect(() => {
+        onAddressChange(address)
+    }, [address])
 
     const addLocation = (lat, long) => {
         const body = {

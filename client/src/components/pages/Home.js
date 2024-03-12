@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
-import { Link, Route } from "react-router-dom";
-
-
+import { Link } from "react-router-dom";
 
 import "../../utilities.css";
 import "./Home.css";
-import Explore from "../pages/Explore";
+import Address from "../modules/Address"
 
 
 const GOOGLE_CLIENT_ID = "402607011221-q6aaeqns6r1fk63b39cuv8ceb7n4jnsm.apps.googleusercontent.com";
 
 
 
-const Skeleton = ({ userId, handleLogin, handleLogout }) => {
+const Skeleton = ({ userId, handleLogin, handleLogout, history }) => {
   const [address, setAddress] = useState(""); // State to store the search text
 
-  const handleInputChange = (event) => {
-    setAddress(event.target.value); // Update the search text state when input changes
+  const handleAddressChange = (newAddress) => {
+    setAddress(newAddress);
   };
 
   const handleSubmit = (event) => {
@@ -41,16 +39,9 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
           </div>
           <div className="text-overlay">
             <form onSubmit={handleSubmit}> {/* Call handleSubmit when form is submitted */}
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your city, address, neighborhood, zip code"
-                value={address} // Bind input value to searchText state
-                onChange={handleInputChange} // Call handleInputChange when input changes
-              />
+              <Address onAddressChange={handleAddressChange}/>
               <div>
-              <Link to={`/explore/${address}`} id="explore">Explore</Link>
+              <Link to={`/explore/${address}`} id="explore" onClick={handleAddressChange}>Search</Link>
               </div>
               
             </form>
