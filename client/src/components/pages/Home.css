@@ -30,7 +30,7 @@
 }
 
 
-input[type="text"] {
+/*input[type="text"] {
     width: 700px; 
     height:70px;
     padding: 10px; 
@@ -39,7 +39,7 @@ input[type="text"] {
     box-sizing: border-box; 
     font-size: 16px; 
 
-}
+}*/
 
 .text-overlay {
     color:rgb(31, 35, 39);
@@ -54,6 +54,22 @@ input[type="text"] {
     border-radius:300px;
     border-color:black;
     font-size: 25px;
+    width: 80%;
+}
+
+@keyframes submit {
+	0% {
+		opacity: 0;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 #review {
@@ -78,7 +94,7 @@ input[type="text"] {
 }
 
 #explore{
-    text-decoration:rgb(52, 46, 75);
+    text-decoration:none;
     background: var(--blue);
     color: var(--white);
     padding: .5rem 1rem;
@@ -92,7 +108,8 @@ input[type="text"] {
     margin-top: 10px;
 }
 #explore:hover{
-    opacity: 0.8;
+    background-color: var(--blue-d-1);
+    animation: submit 0.5s;
 }
 
 .About {
@@ -133,3 +150,13 @@ input[type="text"] {
 #bathroom-image {
     filter: brightness(50%)
 }
+
+.background-test {
+    background-color: red;
+}
+
+.submission-input {
+    width:50%;
+    display: inline-block;
+}
+

@@ -37,13 +37,11 @@ const Skeleton = ({ userId, handleLogin, handleLogout, history }) => {
               </Link>
             </div>
           </div>
-          <div className="text-overlay">
-            <form onSubmit={handleSubmit}> {/* Call handleSubmit when form is submitted */}
-              <Address onAddressChange={handleAddressChange} home={true}/>
-              <div>
-              <Link to={`/explore/${address}`} id="explore" onClick={handleAddressChange}>Search</Link>
+          <div className="u-flex u-inlineBlock text-overlay">
+            <div className="submission-input u-flex u-inlineBlock">
+              <Address onAddressChange={handleAddressChange} home={true} className="background-test" />
+              <Link to={`/explore/${address}`} id="explore" className="u-link background-test" onClick={handleAddressChange}>Search</Link>
               </div>
-            </form>
           </div>
           
         </div>

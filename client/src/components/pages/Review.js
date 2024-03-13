@@ -20,9 +20,9 @@ const Review = (props) => {
         <div className="Review-container">
             <div className="wrapper">
                 <h1>Write Your Review Below</h1>
-                <h1></h1>
+                
                 <Address />
-                <h1></h1>
+                
                 <BathroomButtons />
                 <div className="textInputs">
                     <div className="overall">Rate Your Overall Experience

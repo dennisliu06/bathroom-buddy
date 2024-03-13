@@ -109,9 +109,10 @@ const Address = ({onAddressChange, home}) => {
     };
 
     return (
-        <div className="Location">Your Address
+        <div className="Location">
             <div className="addressInput">
                 <input
+                    className={home ? "Home-address" : "Review-address"}
                     type="text"
                     placeholder="Enter Address Here"
                     value={address}
@@ -119,7 +120,7 @@ const Address = ({onAddressChange, home}) => {
                     onFocus={handleInputFocus}
                     ref={autocompleteRef}
                 />
-                <button onClick={handleAddressLookup}>Use Your Location</button>
+                <button className="Review-button" onClick={handleAddressLookup}>Use Your Location</button>
             </div>
             {predictions.length > 0 && (
                 <div className="predictions">
