@@ -11,7 +11,7 @@
 }
 
 .rate:not(checked) > label {
-	float:center;
+	float:right;
     width:1em;
     overflow:hidden;
     white-space:nowrap;

@@ -25,6 +25,10 @@
 	margin-bottom: 1rem;
 }
 
+.Star-rating {
+	display: flex;
+	justify-content: center;
+}
 
 @keyframes submit {
 	0% {
