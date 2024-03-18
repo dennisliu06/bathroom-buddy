@@ -6,6 +6,8 @@ import { post } from "../../utilities"
 const Address = ({onAddressChange, home}) => {
     const [address, setAddress] = useState("");
     const [predictions, setPredictions] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [scriptLoaded, setScriptLoaded] = useState(false);
     const autocompleteRef = useRef(null);
 
     const handleAddressChange = (event) => {
@@ -20,9 +22,7 @@ const Address = ({onAddressChange, home}) => {
             script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCJPdR_z8r1nFaV9BgQX18PV8BZDqib0ho&libraries=places`;
             script.async = true;
             script.onload = () => {
-                const autocomplete = new window.google.maps.places.Autocomplete(autocompleteRef.current);
-                autocomplete.addListener("place_changed", handlePlaceSelect);
-                autocompleteRef.current = autocomplete;
+                setScriptLoaded(true);
             };
             document.body.appendChild(script);
         };
@@ -30,11 +30,17 @@ const Address = ({onAddressChange, home}) => {
         if (!window.google || !window.google.maps) {
             loadGoogleMapsScript();
         } else {
+            setScriptLoaded(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        if(scriptLoaded) {
             const autocomplete = new window.google.maps.places.Autocomplete(autocompleteRef.current);
             autocomplete.addListener("place_changed", handlePlaceSelect);
             autocompleteRef.current = autocomplete;
         }
-    }, []);
+    }, [scriptLoaded])
 
     const handlePlaceSelect = () => {
         if (autocompleteRef.current) {
@@ -68,8 +74,10 @@ const Address = ({onAddressChange, home}) => {
       }
 
     const handleAddressLookup = () => {
+        setLoading(true);
         navigator.geolocation.getCurrentPosition(
             (position) => {
+                setLoading(false);
                 const { latitude, longitude } = position.coords;
                 const geocoder = new window.google.maps.Geocoder();
                 const latLng = new window.google.maps.LatLng(latitude, longitude);
@@ -87,6 +95,7 @@ const Address = ({onAddressChange, home}) => {
                 });
             },
             (error) => {
+                setLoading(false);
                 console.error("Error getting geolocation coordinates: ", error);
             }
         );
@@ -114,13 +123,14 @@ const Address = ({onAddressChange, home}) => {
                 <input
                     className={home ? "Home-address" : "Review-address"}
                     type="text"
-                    placeholder="Enter Address Here"
+                    placeholder={loading ? "Loading..." : "Enter address here"}
                     value={address}
                     onChange={handleAddressChange}
                     onFocus={handleInputFocus}
                     ref={autocompleteRef}
+                    disabled={!scriptLoaded || loading}
                 />
-                <button className="Review-button" onClick={handleAddressLookup}>Use Your Location</button>
+                <button className="Review-button" onClick={handleAddressLookup} disabled={loading}>Use Your Location</button>
             </div>
             {predictions.length > 0 && (
                 <div className="predictions">

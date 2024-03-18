@@ -17,12 +17,13 @@ export default function SimpleMap(props){
                 defaultZoom={17}
                 
             >
+            
                 <Marker
                 lat={location.lat}
                 lng={location.lng}
-                text="Location"
-                
+                text="You"
                 />
+            
             </GoogleMapReact>
             </div>
         </div>

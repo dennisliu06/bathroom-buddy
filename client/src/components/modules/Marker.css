@@ -1,4 +1,11 @@
 .marker{
     width:"20px";
-    
+    left: -600px;
+    top: -2400px;
+}
+
+.Marker-container {
+
+    left: -600px;
+    top: -2400px;
 }
